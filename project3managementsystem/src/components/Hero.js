@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -23,7 +24,9 @@ export default function Hero() {
             </p>
             <div className="flex gap-2 justify-center">
               <Button variant="outline">Find A Specialist</Button>
-              <Button>Apply As A Doctor</Button>
+              <Link href={"/doctors/apply"}>
+               <Button>Apply As A Doctor</Button>
+              </Link>
             </div>
           </div>
           <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">

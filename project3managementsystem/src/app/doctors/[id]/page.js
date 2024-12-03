@@ -1,3 +1,4 @@
+import { DatePicker } from "@/components/DatePicker";
 import { Button } from "@/components/ui/button";
 import { doctors } from "@/lib/data";
 import { ClockIcon, HomeIcon, IdCardIcon } from "@radix-ui/react-icons";
@@ -161,6 +162,8 @@ export default function DoctorDetail({ params }) {
                   <p> $ {doctorInfo.fees}</p>
                 </div>
               </div>
+              <h1 className="font-bold">Pick Your Appointment Date</h1>
+              <DatePicker />
               <Button className="w-full"> Book An Appointment </Button>
             </div>
           </div>

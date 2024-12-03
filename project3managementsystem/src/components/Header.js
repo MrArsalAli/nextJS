@@ -8,12 +8,15 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Link from "next/link";
+import { Button } from "./ui/button";
 
 export default function Header() {
+  const session = null;
   return (
     <div className="flex justify-between container mx-auto p-2 border">
       <div className="text-3xl font-mono">LOGO</div>
-      <div className="">
+      <div>
+        {session ?
         <DropdownMenu>
           <DropdownMenuTrigger>
             <Avatar>
@@ -32,7 +35,11 @@ export default function Header() {
             </Link>
             <DropdownMenuItem>Logout</DropdownMenuItem>
           </DropdownMenuContent>
-        </DropdownMenu>
+        </DropdownMenu> :
+        <Link href={"/signin"}>
+          <Button variant={"outline"}>Login</Button>
+        </Link>
+        }
       </div>
     </div>
   );
